@@ -1,5 +1,9 @@
 name: Build
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   schedule:
     - cron: "0 3 * * *"
@@ -144,6 +148,7 @@ jobs:
     name: Docker
     needs: set-envs
     uses: ./.github/workflows/build-docker-image.yml
+    secrets: inherit
     with:
       OWNER_LC: ${{ needs.set-envs.outputs.OWNER_LC }}
 
