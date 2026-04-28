@@ -13,8 +13,7 @@ jobs:
   update-kernel-configs-docs:
     name: Update kernel configs docs
     permissions:
-      actions: write
-      contents: read
+      contents: write
     env:
       JAVA_HOME: /usr
       ARCH: aarch64
